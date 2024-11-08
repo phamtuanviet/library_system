@@ -1,0 +1,547 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1024.0" styleClass="parent" stylesheets="@../css/dashboard.css" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.jetbrains.librarysystem.controller.DashBoardController">
+    <left>
+        <AnchorPane maxHeight="600.0" maxWidth="48.0" minHeight="600.0" minWidth="45.0" prefHeight="600.0" prefWidth="48.0" styleClass="sidebar" BorderPane.alignment="CENTER">
+            <children>
+                <VBox layoutX="6.0" layoutY="227.0" prefHeight="147.0" prefWidth="35.0" AnchorPane.bottomAnchor="226.60000000000002" AnchorPane.leftAnchor="6.0" AnchorPane.rightAnchor="7.600000000000001" AnchorPane.topAnchor="227.0">
+                    <children>
+                  <Button fx:id="home_btn" mnemonicParsing="false" onAction="#switchForm" styleClass="init_home_btn">
+                     <graphic>
+                              <FontAwesomeIconView fx:id="home_icon" disable="true" fill="WHITE" glyphName="HOME" selectionFill="#f2f2f2" size="1.5em" wrappingWidth="15.428571701049805" />
+                     </graphic>
+                  </Button>
+                  <Button fx:id="user_btn" mnemonicParsing="false" onAction="#switchForm" styleClass="button_dash_board">
+                     <graphic>
+                              <FontAwesomeIconView fx:id="user_icon" disable="true" fill="WHITE" glyphName="USERS" selectionFill="#f2f2f2" size="1.5em" wrappingWidth="15.428571701049805" />
+                     </graphic>
+                     <VBox.margin>
+                        <Insets top="10.0" />
+                     </VBox.margin>
+                  </Button>
+                  <Button fx:id="document_btn" mnemonicParsing="false" onAction="#switchForm" styleClass="button_dash_board">
+                     <graphic>
+                              <FontAwesomeIconView fx:id="docyment_icon" disable="true" fill="WHITE" glyphName="BOOK" selectionFill="#f2f2f2" size="1.5em" />
+                     </graphic>
+                     <VBox.margin>
+                        <Insets top="10.0" />
+                     </VBox.margin>
+                  </Button>
+                  <Button fx:id="transaction_btn" mnemonicParsing="false" onAction="#switchForm" styleClass="button_dash_board">
+                     <graphic>
+                              <FontAwesomeIconView fx:id="transaction_icon" disable="true" fill="WHITE" glyphName="EXCHANGE" selectionFill="#f2f2f2" size="1.5em" />
+                     </graphic>
+                     <VBox.margin>
+                        <Insets top="10.0" />
+                     </VBox.margin>
+                  </Button>
+                    </children>
+                </VBox>
+            <Button layoutX="7.0" layoutY="549.0" mnemonicParsing="false" onAction="#logout" styleClass="button_dash_board">
+               <graphic>
+                      <FontAwesomeIconView disable="true" fill="WHITE" glyphName="SIGN_OUT" size="1.5em" wrappingWidth="15.428571701049805" />
+               </graphic>
+            </Button>
+            </children>
+        </AnchorPane>
+    </left>
+    <center>
+        <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+            <children>
+            <StackPane fx:id="home_stack" prefHeight="600.0" prefWidth="976.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <children>
+                      <AnchorPane prefHeight="600.0" prefWidth="976.0" styleClass="home_background">
+                          <children>
+                              <HBox layoutX="31.0" prefHeight="289.0" prefWidth="914.0" styleClass="home_top">
+                                  <children>
+                                      <AnchorPane maxHeight="220.0" minHeight="220.0" prefHeight="255.0" prefWidth="243.0" styleClass="user_card">
+                                          <HBox.margin>
+                                              <Insets left="46.0" top="30.0" />
+                                          </HBox.margin>
+                                          <children>
+                                              <Label layoutX="72.0" layoutY="159.0" text="Total User" textFill="WHITE">
+                                                  <font>
+                                                      <Font name="Arial Bold" size="20.0" />
+                                                  </font>
+                                              </Label>
+                                    <FontAwesomeIconView fill="WHITE" glyphName="USERS" layoutX="102.0" layoutY="71.0" size="3em" />
+                                    <StackPane layoutX="63.0" layoutY="125.0" prefHeight="37.0" prefWidth="120.0">
+                                       <children>
+                                          <Label fx:id="totalUsersText" text="Label" textFill="WHITE">
+                                             <font>
+                                                <Font name="Arial Bold" size="18.0" />
+                                             </font>
+                                          </Label>
+                                       </children>
+                                    </StackPane>
+                                          </children>
+                                      </AnchorPane>
+                                      <AnchorPane layoutX="10.0" layoutY="10.0" maxHeight="220.0" maxWidth="243.0" minHeight="220.0" prefHeight="255.0" prefWidth="243.0" styleClass="document_card">
+                                          <HBox.margin>
+                                              <Insets left="46.0" top="30.0" />
+                                          </HBox.margin>
+                                          <children>
+                                              <Label layoutX="29.0" layoutY="163.0" text="Availible Document" textFill="WHITE">
+                                                  <font>
+                                                      <Font name="Arial Bold" size="20.0" />
+                                                  </font>
+                                              </Label>
+                                    <FontAwesomeIconView fill="WHITE" glyphName="BOOK" layoutX="105.0" layoutY="70.0" size="3em" text="" />
+                                    <StackPane layoutX="62.0" layoutY="125.0" prefHeight="37.0" prefWidth="120.0">
+                                       <children>
+                                          <Label fx:id="totalDocumentsText" text="Label" textFill="WHITE">
+                                             <font>
+                                                <Font name="Arial Bold" size="18.0" />
+                                             </font>
+                                          </Label>
+                                       </children>
+                                    </StackPane>
+                                          </children>
+                                      </AnchorPane>
+                                      <AnchorPane layoutX="253.0" layoutY="10.0" maxHeight="220.0" minHeight="220.0" prefHeight="220.0" prefWidth="243.0" styleClass="transaction_card">
+                                          <HBox.margin>
+                                              <Insets left="46.0" top="30.0" />
+                                          </HBox.margin>
+                                          <children>
+                                              <Label layoutX="38.0" layoutY="164.0" text="Total Transaction" textFill="WHITE">
+                                                  <font>
+                                                      <Font name="Arial Bold" size="20.0" />
+                                                  </font>
+                                              </Label>
+                                    <FontAwesomeIconView fill="WHITE" glyphName="EXCHANGE" layoutX="104.0" layoutY="81.0" size="3em" />
+                                    <StackPane layoutX="62.0" layoutY="126.0" prefHeight="37.0" prefWidth="120.0">
+                                       <children>
+                                          <Label fx:id="totalTransactionsText" text="Label" textFill="WHITE">
+                                             <font>
+                                                <Font name="Arial Bold" size="18.0" />
+                                             </font>
+                                          </Label>
+                                       </children>
+                                    </StackPane>
+                                          </children>
+                                      </AnchorPane>
+                                  </children>
+                              </HBox>
+                        <AnchorPane layoutX="31.0" layoutY="305.0" prefHeight="280.0" prefWidth="920.0">
+                           <children>
+                              <StackPane layoutX="198.0" prefHeight="280.0" prefWidth="524.0" styleClass="stack_image_home">
+                                 <children>
+                                    <ImageView fx:id="image_home" fitHeight="280.0" fitWidth="524.0" pickOnBounds="true" preserveRatio="true" />
+                                 </children>
+                              </StackPane>
+                           </children>
+                        </AnchorPane>
+                          </children>
+                      </AnchorPane>
+               </children>
+            </StackPane>
+                <StackPane fx:id="user_stack" prefHeight="600.0" prefWidth="976.0" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                    <children>
+                        <ScrollPane fx:id="user_scrollPane" fitToWidth="true" hbarPolicy="ALWAYS" prefHeight="600.0" prefWidth="976.0">
+                            <content>
+                                <VBox prefHeight="587.0" prefWidth="976.0" styleClass="home_background">
+                                    <children>
+                                        <AnchorPane prefHeight="138.0" prefWidth="961.0">
+                                            <children>
+                                                <TextField fx:id="search_user" layoutX="41.0" layoutY="13.0" prefHeight="38.0" prefWidth="333.0">
+                                                    <font>
+                                                        <Font size="20.0" />
+                                                    </font>
+                                                    <padding>
+                                                        <Insets left="10.0" right="50.0" />
+                                                    </padding>
+                                                </TextField>
+                                                <FontAwesomeIconView glyphName="SEARCH" layoutX="342.0" layoutY="40.0" size="2em" />
+                                                <Label layoutX="41.0" layoutY="51.0" prefHeight="44.0" prefWidth="206.0" text="User Dashboard" textFill="WHITE">
+                                                    <font>
+                                                        <Font name="Arial Bold Italic" size="18.0" />
+                                                    </font>
+                                                </Label>
+                                                <Button fx:id="user_add_btn" layoutX="454.0" layoutY="7.0" mnemonicParsing="false" onAction="#userAddBtnAction" prefHeight="50.0" prefWidth="52.0" styleClass="user_add_btn" />
+                                                <FontAwesomeIconView disable="true" fill="WHITE" glyphName="PLUS" layoutX="466.0" layoutY="45.0" size="3em" />
+                                            </children>
+                                        </AnchorPane>
+                                        <FlowPane fx:id="user_content" hgap="25.0" prefHeight="522.0" prefWidth="961.0" vgap="25.0">
+                                            <VBox.margin>
+                                                <Insets />
+                                            </VBox.margin>
+                                            <padding>
+                                                <Insets left="30.0" right="30.0" top="30.0" />
+                                            </padding>
+                                        </FlowPane>
+                                    </children>
+                                </VBox>
+                            </content>
+                        </ScrollPane>
+                        <AnchorPane fx:id="user_action_frame" prefHeight="200.0" prefWidth="200.0" visible="false">
+                            <children>
+                                <AnchorPane fx:id="user_content_action_frame" layoutX="207.0" layoutY="105.0" prefHeight="390.0" prefWidth="562.0" styleClass="add_bar">
+                                    <children>
+                                        <Label layoutX="281.0" layoutY="31.0" text="User Id :" textFill="WHITE">
+                                            <font>
+                                                <Font name="Arial Bold" size="14.0" />
+                                            </font>
+                                        </Label>
+                                        <TextField fx:id="user_id_text" editable="false" layoutX="348.0" layoutY="26.0" prefHeight="26.0" prefWidth="186.0" styleClass="text">
+                                            <font>
+                                                <Font size="14.0" />
+                                            </font>
+                                        </TextField>
+                                        <Label layoutX="253.0" layoutY="92.0" text="First  Name :" textFill="WHITE">
+                                            <font>
+                                                <Font name="Arial Bold" size="14.0" />
+                                            </font>
+                                        </Label>
+                                        <TextField fx:id="user_firstName_text" layoutX="348.0" layoutY="85.0" prefHeight="26.0" prefWidth="186.0" styleClass="text">
+                                            <font>
+                                                <Font size="14.0" />
+                                            </font>
+                                        </TextField>
+                                        <Label layoutX="255.0" layoutY="153.0" text="Last Name :" textFill="WHITE">
+                                            <font>
+                                                <Font name="Arial Bold" size="14.0" />
+                                            </font>
+                                        </Label>
+                                        <TextField fx:id="user_lastName_text" layoutX="348.0" layoutY="146.0" prefHeight="26.0" prefWidth="186.0" styleClass="text">
+                                            <font>
+                                                <Font size="14.0" />
+                                            </font>
+                                        </TextField>
+                                        <Label layoutX="278.0" layoutY="208.0" text="Gender  :" textFill="WHITE">
+                                            <font>
+                                                <Font name="Arial Bold" size="14.0" />
+                                            </font>
+                                        </Label>
+                                        <Label layoutX="249.0" layoutY="262.0" text="Date of birth :" textFill="WHITE">
+                                            <font>
+                                                <Font name="Arial Bold" size="14.0" />
+                                            </font>
+                                        </Label>
+                                        <ComboBox fx:id="user_gender_text" layoutX="347.0" layoutY="203.0" prefHeight="26.0" prefWidth="186.0" />
+                                        <DatePicker fx:id="user_date_of_birth_text" layoutX="347.0" layoutY="257.0" prefHeight="26.0" prefWidth="186.0" />
+                                        <Button fx:id="user_close_action" layoutX="73.0" layoutY="313.0" mnemonicParsing="false" onAction="#closUserActionFrame" prefHeight="45.0" prefWidth="195.0" styleClass="delete_btn" text="Close">
+                                            <font>
+                                                <Font name="Arial Bold" size="14.0" />
+                                            </font>
+                                        </Button>
+                                        <Button fx:id="user_action_btn" layoutX="309.0" layoutY="313.0" mnemonicParsing="false" onAction="#actionUser" prefHeight="45.0" prefWidth="195.0" styleClass="update_btn" text="Update">
+                                            <font>
+                                                <Font name="Arial Bold" size="14.0" />
+                                            </font>
+                                        </Button>
+                                        <AnchorPane layoutX="27.0" layoutY="23.0" prefHeight="269.0" prefWidth="214.0" styleClass="frame_action_image">
+                                            <children>
+                                                <Button fx:id="user_insert_image_btn" layoutY="207.0" mnemonicParsing="false" onAction="#insertImageBtn" prefHeight="62.0" prefWidth="214.0" styleClass="add_insert_btn" text="Insert" textFill="WHITE">
+                                                    <font>
+                                                        <Font name="Arial Bold" size="14.0" />
+                                                    </font>
+                                                </Button>
+                                                <StackPane alignment="center" prefHeight="212.0" prefWidth="214.0">
+                                                    <children>
+                                                        <ImageView fx:id="user_image_view" fitHeight="217.0" fitWidth="214.0" pickOnBounds="true" preserveRatio="true" smooth="true" styleClass="image_view_action" />
+                                                    </children>
+                                                </StackPane>
+                                            </children>
+                                        </AnchorPane>
+                                    </children>
+                                </AnchorPane>
+                            </children>
+                        </AnchorPane>
+                    </children>
+                </StackPane>
+                <StackPane fx:id="document_stack" prefHeight="600.0" prefWidth="976.0" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                    <children>
+                        <ScrollPane fx:id="document_scrollPane" prefHeight="200.0" prefWidth="200.0">
+                            <content>
+                                <VBox prefHeight="600.0" prefWidth="976.0" styleClass="home_background">
+                                    <children>
+                                        <AnchorPane prefHeight="138.0" prefWidth="961.0">
+                                            <children>
+                                                <TextField fx:id="search_document" layoutX="41.0" layoutY="13.0" prefHeight="38.0" prefWidth="333.0">
+                                                    <font>
+                                                        <Font size="20.0" />
+                                                    </font>
+                                                    <padding>
+                                                        <Insets left="10.0" right="50.0" />
+                                                    </padding>
+                                                </TextField>
+                                                <FontAwesomeIconView glyphName="SEARCH" layoutX="342.0" layoutY="40.0" size="2em" />
+                                                <Label layoutX="41.0" layoutY="51.0" prefHeight="44.0" prefWidth="206.0" text="Document Dashboard" textFill="WHITE">
+                                                    <font>
+                                                        <Font name="Arial Bold Italic" size="18.0" />
+                                                    </font>
+                                                </Label>
+                                                <Button fx:id="document_swap" layoutX="433.0" layoutY="13.0" mnemonicParsing="false" onAction="#setIsAvailable" prefHeight="35.0" prefWidth="185.0" styleClass="update_btn" text="Document Available" textFill="WHITE">
+                                                    <font>
+                                                        <Font name="Arial Bold" size="16.0" />
+                                                    </font>
+                                                </Button>
+                                            </children>
+                                        </AnchorPane>
+                                        <FlowPane fx:id="document_content" hgap="25.0" prefHeight="522.0" prefWidth="961.0" vgap="25.0">
+                                            <padding>
+                                                <Insets left="30.0" right="30.0" top="30.0" />
+                                            </padding>
+                                        </FlowPane>
+                                    </children>
+                                </VBox>
+                            </content>
+                        </ScrollPane>
+                        <AnchorPane fx:id="document_action_frame" prefHeight="200.0" prefWidth="200.0" visible="false">
+                            <children>
+                                <AnchorPane fx:id="document_content_action_frame" layoutX="207.0" layoutY="105.0" prefHeight="390.0" prefWidth="562.0" styleClass="add_bar">
+                                    <children>
+                                        <Label layoutX="248.0" layoutY="33.0" text="Document Id :" textFill="WHITE">
+                                            <font>
+                                                <Font name="Arial Bold" size="14.0" />
+                                            </font>
+                                        </Label>
+                                        <TextField fx:id="document_id_text" editable="false" layoutX="348.0" layoutY="26.0" prefHeight="26.0" prefWidth="186.0" styleClass="text">
+                                            <font>
+                                                <Font size="14.0" />
+                                            </font>
+                                        </TextField>
+                                        <Label layoutX="295.0" layoutY="92.0" text="Titile :" textFill="WHITE">
+                                            <font>
+                                                <Font name="Arial Bold" size="14.0" />
+                                            </font>
+                                        </Label>
+                                        <TextField fx:id="document_titile_text" editable="false" layoutX="348.0" layoutY="85.0" prefHeight="26.0" prefWidth="186.0" styleClass="text">
+                                            <font>
+                                                <Font size="14.0" />
+                                            </font>
+                                        </TextField>
+                                        <Label layoutX="281.0" layoutY="153.0" text="Author :" textFill="WHITE">
+                                            <font>
+                                                <Font name="Arial Bold" size="14.0" />
+                                            </font>
+                                        </Label>
+                                        <TextField fx:id="document_author_text" editable="false" layoutX="348.0" layoutY="146.0" prefHeight="26.0" prefWidth="186.0" styleClass="text">
+                                            <font>
+                                                <Font size="14.0" />
+                                            </font>
+                                        </TextField>
+                                        <Label layoutX="271.0" layoutY="208.0" text="Category :" textFill="WHITE">
+                                            <font>
+                                                <Font name="Arial Bold" size="14.0" />
+                                            </font>
+                                        </Label>
+                                        <Label layoutX="283.0" layoutY="262.0" prefHeight="16.0" prefWidth="58.0" text="Quatity :" textFill="WHITE">
+                                            <font>
+                                                <Font name="Arial Bold" size="14.0" />
+                                            </font>
+                                        </Label>
+                                        <Button fx:id="document_close_btn" layoutX="73.0" layoutY="313.0" mnemonicParsing="false" onAction="#closeDocumentFrame" prefHeight="45.0" prefWidth="195.0" styleClass="delete_btn" text="Close">
+                                            <font>
+                                                <Font name="Arial Bold" size="14.0" />
+                                            </font>
+                                        </Button>
+                                        <Button fx:id="document_action_btn" layoutX="309.0" layoutY="313.0" mnemonicParsing="false" onAction="#actionDocument" prefHeight="45.0" prefWidth="195.0" styleClass="update_btn" text="Update">
+                                            <font>
+                                                <Font name="Arial Bold" size="14.0" />
+                                            </font>
+                                        </Button>
+                                        <AnchorPane layoutX="27.0" layoutY="23.0" prefHeight="269.0" prefWidth="214.0" styleClass="frame_action_image">
+                                            <children>
+                                                <StackPane alignment="center" prefHeight="212.0" prefWidth="214.0">
+                                                    <children>
+                                                        <ImageView fx:id="document_image_view" fitHeight="267.0" fitWidth="214.0" pickOnBounds="true" preserveRatio="true" smooth="true" styleClass="image_view_action" />
+                                                    </children>
+                                                </StackPane>
+                                            </children>
+                                        </AnchorPane>
+                                        <TextField fx:id="document_category_text" editable="false" layoutX="348.0" layoutY="201.0" prefHeight="26.0" prefWidth="186.0" styleClass="text">
+                                            <font>
+                                                <Font size="14.0" />
+                                            </font>
+                                        </TextField>
+                                        <TextField fx:id="document_quantity_text" layoutX="348.0" layoutY="255.0" prefHeight="26.0" prefWidth="186.0" styleClass="text">
+                                            <font>
+                                                <Font size="14.0" />
+                                            </font>
+                                        </TextField>
+                                    </children>
+                                </AnchorPane>
+                            </children>
+                        </AnchorPane>
+                  <AnchorPane fx:id="document_qr_frame" prefHeight="200.0" prefWidth="200.0" visible="false">
+                     <children>
+                        <AnchorPane layoutX="248.0" layoutY="76.0" prefHeight="475.0" prefWidth="479.0" styleClass="qr_background">
+                           <children>
+                              <StackPane layoutX="40.0" layoutY="38.0" prefHeight="400.0" prefWidth="400.0">
+                                 <children>
+                                    <ImageView fx:id="document_qr_image_view" fitHeight="400.0" fitWidth="400.0" pickOnBounds="true" preserveRatio="true" />
+                                 </children>
+                              </StackPane>
+                           </children>
+                        </AnchorPane>
+                        <Button fx:id="document_qr_back" layoutX="40.0" layoutY="102.0" mnemonicParsing="false" onAction="#closeDocumentQrFrame" prefHeight="34.0" prefWidth="38.0" styleClass="delete_btn">
+                           <graphic>
+                              <FontAwesomeIconView disable="true" fill="WHITE" glyphName="ARROW_LEFT" size="1.5em" />
+                           </graphic>
+                        </Button>
+                     </children>
+                  </AnchorPane>
+                    </children>
+                </StackPane>
+            <StackPane fx:id="transaction_stack" prefHeight="600.0" prefWidth="976.0" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <children>
+                  <AnchorPane fx:id="transaction_option" prefHeight="200.0" prefWidth="200.0" styleClass="home_background">
+                     <children>
+                        <Button fx:id="transaction_borrow_btn_option" layoutX="101.0" layoutY="250.0" mnemonicParsing="false" onAction="#switchFormTransaction" prefHeight="100.0" prefWidth="203.0" styleClass="borrow_btn" text="Borrow Document">
+                           <font>
+                              <Font name="Arial Bold" size="18.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="transaction_return_btn_option" layoutX="386.0" layoutY="250.0" mnemonicParsing="false" onAction="#switchFormTransaction" prefHeight="100.0" prefWidth="203.0" styleClass="return_btn" text="Return Document">
+                           <font>
+                              <Font name="Arial Bold" size="18.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="transaction_querry_btn_option" layoutX="699.0" layoutY="250.0" mnemonicParsing="false" onAction="#switchFormTransaction" prefHeight="100.0" prefWidth="203.0" styleClass="querry_btn" text="Querry">
+                           <font>
+                              <Font name="Arial Bold" size="18.0" />
+                           </font>
+                        </Button>
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane fx:id="transaction_borrow_option" prefHeight="200.0" prefWidth="200.0" visible="false">
+                     <children>
+                        <AnchorPane prefHeight="600.0" prefWidth="976.0" styleClass="home_background" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <children>
+                              <TextField fx:id="transaction_search_user_borrow" layoutX="84.0" layoutY="21.0" prefHeight="34.0" prefWidth="278.0" styleClass="search">
+                                 <padding>
+                                    <Insets left="25.0" />
+                                 </padding></TextField>
+                              <FontAwesomeIconView disable="true" fill="WHITE" glyphName="SEARCH" layoutX="90.0" layoutY="44.0" size="1.5em" tabSize="0" />
+                              <TableView fx:id="transaction_user_table" layoutX="84.0" layoutY="67.0" prefHeight="186.0" prefWidth="761.0">
+                                 <columns>
+                                    <TableColumn fx:id="transaction_column_user_id_borrow" prefWidth="75.0" text="User Id" />
+                                    <TableColumn fx:id="transaction_column_user_firstName_borrow" prefWidth="155.19994354248047" text="First name" />
+                                    <TableColumn fx:id="transaction_column_user_lastName_borrow" prefWidth="173.60000610351562" text="Last Name" />
+                                    <TableColumn fx:id="transaction_column_user_gender_borrow" minWidth="0.0" prefWidth="116.79989624023438" text="Gender" />
+                                    <TableColumn fx:id="transaction_column_user_birthDate_borrow" prefWidth="239.20003662109377" sortType="DESCENDING" text="Birth date" />
+                                 </columns>
+                              </TableView>
+                              <TextField fx:id="transaction_serach_document_borrow" layoutX="84.0" layoutY="270.0" prefHeight="34.0" prefWidth="278.0" styleClass="search">
+                                 <padding>
+                                    <Insets left="25.0" />
+                                 </padding></TextField>
+                              <FontAwesomeIconView disable="true" fill="WHITE" glyphName="SEARCH" layoutX="90.0" layoutY="293.0" size="1.5em" tabSize="0" />
+                              <TableView fx:id="transaction_document_table" layoutX="84.0" layoutY="318.0" prefHeight="186.0" prefWidth="762.0">
+                                 <columns>
+                                    <TableColumn fx:id="transaction_column_document_id_borrow" prefWidth="96.79998779296875" text="Document Id" />
+                                    <TableColumn fx:id="transaction_column_document_title_borrow" prefWidth="244.79998779296875" text="Title" />
+                                    <TableColumn fx:id="transaction_column_document_author_borrow" prefWidth="140.80001831054688" text="Author" />
+                                    <TableColumn fx:id="transaction_column_document_category_borrow" minWidth="0.0" prefWidth="161.5999755859375" text="Category" />
+                                    <TableColumn fx:id="transaction_column_document_quantity_borrow" prefWidth="116.80002441406248" sortType="DESCENDING" text="Quantity" />
+                                 </columns>
+                              </TableView>
+                              <Button fx:id="transaction_back_option1" layoutX="23.0" layoutY="21.0" mnemonicParsing="false" onAction="#backToTransactionOption" prefHeight="34.0" prefWidth="38.0" styleClass="delete_btn">
+                                 <graphic>
+                                    <FontAwesomeIconView disable="true" fill="WHITE" glyphName="ARROW_LEFT" size="1.5em" />
+                                 </graphic>
+                              </Button>
+                              <Button fx:id="transaction_borrow_btn" layoutX="298.0" layoutY="560.0" mnemonicParsing="false" onAction="#actionBorrowDocument" prefHeight="18.0" prefWidth="326.0" styleClass="borrow_btn" text="Borrow Document" />
+                              <DatePicker fx:id="transaction_date_text_borrow" layoutX="670.0" layoutY="516.0" />
+                              <Label layoutX="591.0" layoutY="520.0" text="Borrow date :" textFill="WHITE" />
+                              <Button fx:id="transaction_select_user" layoutX="385.0" layoutY="18.0" mnemonicParsing="false" onAction="#selectUserTransaction" prefHeight="40.0" prefWidth="206.0" styleClass="return_btn" text="Select User">
+                                 <font>
+                                    <Font name="Arial Bold" size="14.0" />
+                                 </font>
+                              </Button>
+                              <Button fx:id="transaction_select_document" layoutX="385.0" layoutY="267.0" mnemonicParsing="false" onAction="#selectDocumentTransaction" prefHeight="40.0" prefWidth="206.0" styleClass="querry_btn" text="Select Document">
+                                 <font>
+                                    <Font name="Arial Bold" size="14.0" />
+                                 </font>
+                              </Button>
+                              <Label layoutX="84.0" layoutY="520.0" text="User Id :" textFill="WHITE" />
+                              <TextField fx:id="transaction_userId_select_borrow" disable="true" layoutX="135.0" layoutY="516.0" />
+                              <Label layoutX="309.0" layoutY="520.0" text="Document Id :" textFill="WHITE" />
+                              <TextField fx:id="transaction_documentId_select_borrow" disable="true" layoutX="387.0" layoutY="516.0" />
+                           </children>
+                        </AnchorPane>
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane fx:id="transaction_return_option" prefHeight="200.0" prefWidth="200.0" styleClass="home_background" visible="false">
+                     <children>
+                        <TextField fx:id="transaction_search_return" layoutX="66.0" layoutY="17.0" prefHeight="34.0" prefWidth="278.0" styleClass="search">
+                           <padding>
+                              <Insets left="30.0" />
+                           </padding>
+                        </TextField>
+                        <FontAwesomeIconView disable="true" fill="WHITE" glyphName="SEARCH" layoutX="74.0" layoutY="40.0" size="1.5em" tabSize="0" wrappingWidth="16.714284896850586" />
+                        <TableView fx:id="transaction_table_return" layoutX="66.0" layoutY="77.0" onMouseClicked="#selectTransactionToReturn" prefHeight="303.0" prefWidth="854.0">
+                           <columns>
+                              <TableColumn fx:id="transaction_column_transactionId_return" prefWidth="92.00000762939453" text="Transaction Id" />
+                              <TableColumn fx:id="transaction_column_userID_return" prefWidth="121.5999755859375" text="User Id" />
+                              <TableColumn fx:id="transaction_column_userName_return" prefWidth="191.19998168945312" text="User name" />
+                              <TableColumn fx:id="transaction_column_titleDocument_return" minWidth="0.0" prefWidth="295.20001220703125" text="Title Document" />
+                              <TableColumn fx:id="transaction_column_borrowDate_return" prefWidth="153.60003662109375" sortType="DESCENDING" text="Borrow date" />
+                           </columns>
+                        </TableView>
+                        <Button fx:id="transaction_back_option2" layoutX="14.0" layoutY="17.0" mnemonicParsing="false" onAction="#backToTransactionOption" prefHeight="34.0" prefWidth="38.0" styleClass="delete_btn">
+                           <graphic>
+                              <FontAwesomeIconView disable="true" fill="WHITE" glyphName="ARROW_LEFT" size="1.5em" />
+                           </graphic>
+                        </Button>
+                        <Button fx:id="transaction_return_btn" layoutX="330.0" layoutY="465.0" mnemonicParsing="false" onAction="#actionReturnDocument" prefHeight="86.0" prefWidth="326.0" styleClass="return_btn" text="Return Document">
+                           <font>
+                              <Font name="Arial Bold" size="20.0" />
+                           </font>
+                        </Button>
+                        <DatePicker fx:id="transaction_date_text_return" layoutX="572.0" layoutY="414.0" />
+                        <Label layoutX="495.0" layoutY="418.0" text="Return date :" textFill="#eaeaea" />
+                        <TextField fx:id="transaction_id_text_return" disable="true" layoutX="311.0" layoutY="414.0" />
+                        <Label layoutX="229.0" layoutY="418.0" text="Transaction Id :" textFill="#eaeaea" />
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane fx:id="transaction_querry_option" prefHeight="200.0" prefWidth="200.0" styleClass="home_background" visible="false">
+                     <children>
+                        <TextField fx:id="transaction_search_querry" layoutX="66.0" layoutY="17.0" prefHeight="34.0" prefWidth="278.0" styleClass="search">
+                           <padding>
+                              <Insets left="30.0" />
+                           </padding></TextField>
+                        <FontAwesomeIconView disable="true" fill="WHITE" glyphName="SEARCH" layoutX="74.0" layoutY="40.0" size="1.5em" tabSize="0" wrappingWidth="16.714284896850586" />
+                        <TableView fx:id="transaction_table_querry" layoutX="66.0" layoutY="77.0" prefHeight="469.0" prefWidth="854.0">
+                           <columns>
+                              <TableColumn fx:id="transaction_column_transactionId_querry" prefWidth="92.00000762939453" text="Transaction Id" />
+                              <TableColumn fx:id="transaction_column_userId_querry" prefWidth="108.79998779296875" text="User Id" />
+                              <TableColumn fx:id="transaction_column_userName_querry" prefWidth="155.20001220703125" text="User name" />
+                              <TableColumn fx:id="transaction_column_titleDocument_querry" minWidth="0.0" prefWidth="131.20001220703125" text="Title Document" />
+                              <TableColumn fx:id="transaction_column_borrowDate_querry" prefWidth="141.5999755859375" sortType="DESCENDING" text="Borrow date" />
+                              <TableColumn fx:id="transaction_column_returnDate_querry" prefWidth="136.800048828125" sortType="DESCENDING" text="Return date" />
+                              <TableColumn fx:id="transaction_column_status_querry" prefWidth="84.79996337890623" sortType="DESCENDING" text="Status" />
+                           </columns>
+                        </TableView>
+                        <Button fx:id="transaction_back_option3" layoutX="14.0" layoutY="17.0" mnemonicParsing="false" onAction="#backToTransactionOption" prefHeight="34.0" prefWidth="38.0" styleClass="delete_btn">
+                           <graphic>
+                              <FontAwesomeIconView disable="true" fill="WHITE" glyphName="ARROW_LEFT" size="1.5em" />
+                           </graphic>
+                        </Button>
+                     </children>
+                  </AnchorPane>
+               </children></StackPane>
+            </children>
+        </AnchorPane>
+    </center>
+</BorderPane>
