@@ -11,37 +11,75 @@
 .close{
     -fx-background-color: transparent;
     -fx-cursor: hand;
+    -fx-text-fill: black;
 }
 .close:hover{
     -fx-background-color: #fb3d63;
+    -fx-text-fill: black;
 }
-.textfield{
-    -fx-background-color: linear-gradient(to bottom,#efefef,#eee);
-    -fx-border-color:#000;
-    -fx-border-width:.2px;
-    -fx-font-size: 13px;
-    -fx-border-radius: 5px;
-    -fx-font-family: Tahoma;
+.textfield {
+    -fx-background-color: #ffffff;       /* Nền trắng */
+    -fx-border-bottom-color: #d1d1d1;          /* Viền màu xám nhạt */
+    -fx-border-bottom-width: 2px;
+    -fx-border-top-color: #d1d1d1;          /* Viền màu xám nhạt */
+    -fx-border-top-width: 0px;
+    -fx-border-right-color: #d1d1d1;          /* Viền màu xám nhạt */
+    -fx-border-right-width: 0px;
+    -fx-border-left-color: #d1d1d1;          /* Viền màu xám nhạt */
+    -fx-border-left-width: 0px;
+    -fx-border-radius: 10px;            /* Bo tròn viền */
+    -fx-background-radius: 10px; /* Độ dày viền */
+            /* Bo tròn nền */
+    -fx-font-size: 14px;                /* Kích thước chữ */
+    -fx-font-family: "Segoe UI", Tahoma, sans-serif; /* Font hiện đại */
+    -fx-padding: 8px 10px;              /* Khoảng cách nội dung bên trong */
+    -fx-text-fill: #333;                /* Màu chữ */
+    -fx-prompt-text-fill: #aaa;         /* Màu placeholder */
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.1), 4, 0.3, 0, 2); /* Đổ bóng nhẹ */
+    -fx-transition: all 0.3s ease-in-out; /* Hiệu ứng mượt */
 }
-.textfield:focused{
-    -fx-border-width:.4px;
-    -fx-background-color: linear-gradient(to bottom,#efefef,#eee);
+.textfield:focused {
+    -fx-border-color: #3383ec;          /* Viền xanh dương khi focus */
+    -fx-effect: dropshadow(gaussian, rgba(51, 131, 236, 0.5), 8, 0.3, 0, 2); /* Đổ bóng khi focus */
+    -fx-text-fill: #000;                /* Màu chữ đậm hơn */
 }
 
-.textgreed{
+
+
+
+.textgreed {
     -fx-background-color: transparent;
-    -fx-font-size: 2em;
+    -fx-font-family: "Poppins", sans-serif;
+    -fx-font-size: 3em;
     -fx-font-weight: bold;
-    -fx-text-fill: #ac432c;
+    -fx-text-fill: #b76e79;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.2), 8, 0.5, 0, 2);
+
 }
-.login-btn{
-    -fx-background-color: linear-gradient(to bottom,#3383ec,#1d559e);
+
+.login-btn {
+    -fx-background-color: linear-gradient(to right,#66CC66,#CFE1B9);
     -fx-cursor: hand;
-    -fx-text-fill:#fff;
-    -fx-font-size: 14px;
-    -fx-font-family: "Arial";
-    -fx-background-radius: 10px;
+    -fx-font-family: "Barlow Condensed ExtraBold"; /* Đảm bảo font hỗ trợ in nghiêng */
+    -fx-font-size: 20px;
+
+    -fx-font-weight: bold; /* Làm chữ đậm */
+    -fx-text-fill: white;
+    -fx-background-radius: 20px;
+    -fx-border-radius: 20px;
+    -fx-padding: 10px 20px;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.2), 8, 0.5, 0, 2);
+    -fx-transition: all 0.3s ease-in-out;
 }
-.login-btn:hover{
-    -fx-background-color: linear-gradient(to bottom,#2968a7,#1d559e);
+.login-btn:hover {
+    -fx-background-color: linear-gradient(to right,#B6C99B, #66CC66);
+    -fx-effect: dropshadow(gaussian, rgba(56, 142, 60, 0.5), 10, 0.5, 0, 2);
+}
+
+.intro-text {
+    -fx-font-family: "Open Sans", Arial, sans-serif;
+    -fx-font-size: 14px;
+    -fx-text-fill: #7e4a4e;
+    -fx-line-spacing: 1.5;
+    -fx-wrap-text: true;
 }

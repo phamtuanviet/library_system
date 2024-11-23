@@ -6,44 +6,46 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
 <StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="452.0" prefWidth="653.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.jetbrains.librarysystem.controller.LoginController">
     <children>
         <AnchorPane fx:id="main_form" prefHeight="200.0" prefWidth="200.0">
             <children>
-                <AnchorPane layoutY="1.0" prefHeight="452.0" prefWidth="326.0" styleClass="left-form" stylesheets="@../css/login.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="327.20000000000005" AnchorPane.topAnchor="0.0">
+                <AnchorPane layoutY="1.0" prefHeight="452.0" prefWidth="326.0" styleClass="left-form" stylesheets="@../css/login.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                     <children>
-                        <FontAwesomeIconView fill="WHITE" glyphName="BOOK" layoutX="113.0" layoutY="170.0" size="10em" text="" AnchorPane.topAnchor="67.14286041259766" />
-                        <Label focusTraversable="false" layoutX="25.0" layoutY="226.0" text="Library Management System" textFill="WHITE">
-                            <font>
-                                <Font name="Tahoma Bold" size="20.0" />
-                            </font>
-                        </Label>
-                    </children>
-                </AnchorPane>
-                <AnchorPane centerShape="false" layoutX="327.0" prefHeight="452.0" prefWidth="326.0" styleClass="right-form" stylesheets="@../css/login.css">
-                    <children>
-                        <TextField fx:id="username" layoutX="51.0" layoutY="181.0" prefHeight="30.0" prefWidth="220.0" promptText="UserName" styleClass="textfield" stylesheets="@../css/login.css" />
-                        <FontAwesomeIconView glyphName="USER" layoutX="141.0" layoutY="104.0" selectionStart="0" size="5em" />
-                        <PasswordField fx:id="password" layoutX="52.0" layoutY="236.0" prefHeight="30.0" prefWidth="220.0" promptText="Password" styleClass="textfield" stylesheets="@../css/login.css">
-                            <rotationAxis>
-                                <Point3D />
-                            </rotationAxis>
-                        </PasswordField>
-                        <Button fx:id="loginBtn" layoutX="51.0" layoutY="291.0" mnemonicParsing="false" onAction="#loginAdmin" prefHeight="30.0" prefWidth="220.0" styleClass="login-btn" text="Login" textAlignment="CENTER" textFill="WHITE" />
-                        <Button fx:id="close" focusTraversable="false" layoutX="257.0" layoutY="3.2" mnemonicParsing="false" onAction="#close" prefHeight="30.0" prefWidth="50.0" styleClass="close" stylesheets="@../css/login.css" AnchorPane.rightAnchor="2.0" AnchorPane.topAnchor="3.0">
-                            <graphic>
-                                <FontAwesomeIconView glyphName="CLOSE" selectionStart="0" size="1.2em" tabSize="0" text="" textAlignment="CENTER" />
-                            </graphic>
-                        </Button>
-                        <Label focusTraversable="false" layoutX="76.0" layoutY="126.0" styleClass="textgreed" text="Welcom Back!" textFill="#ac432c">
-                            <font>
-                                <Font size="10.0" />
-                            </font>
-                        </Label>
+                        <ImageView fitHeight="452.0" fitWidth="326.0" layoutX="327.0" layoutY="1.0" preserveRatio="true">
+                            <image>
+                                <Image url="@../image/your-image.jpg" />
+                            </image>
+                        </ImageView>
+
+                        <AnchorPane centerShape="false" layoutY="1.0" prefHeight="452.0" prefWidth="326.0" style="-fx-background-color: #E7F5DC;" styleClass="right-form" stylesheets="@../css/login.css">
+                            <children>
+                                <TextField fx:id="username" layoutX="35.0" layoutY="288.0" prefHeight="34.0" prefWidth="198.0" promptText="Username" styleClass="textfield" stylesheets="@../css/login.css" />
+                                <FontAwesomeIconView fill="#66CC66" glyphName="BOOK" layoutX="34.0" layoutY="132.0" selectionStart="0" size="5em" text="" wrappingWidth="50.40000000000009" />
+                                <PasswordField fx:id="password" layoutX="35.0" layoutY="333.0" prefHeight="34.0" prefWidth="198.0" promptText="Password" styleClass="textfield" stylesheets="@../css/login.css">
+                                    <rotationAxis>
+                                        <Point3D />
+                                    </rotationAxis>
+                                </PasswordField>
+                                <Button fx:id="loginBtn" layoutX="35.0" layoutY="382.0" mnemonicParsing="false" onAction="#loginAdmin" prefHeight="41.0" prefWidth="198.0" styleClass="login-btn" text="Login" textAlignment="CENTER" textFill="WHITE" />
+                                <Label focusTraversable="false" layoutX="35.0" layoutY="140.0" prefHeight="54.0" prefWidth="191.0" styleClass="textgreed" text="Digital lib" textFill="#ac432c">
+                                    <font>
+                                        <Font size="22.0" />
+                                    </font>
+                                </Label>
+                                <Text fill="#460b0b" layoutX="34.0" layoutY="210.0" styleClass="intro-text" text="Manage your library conveniently and quickly. Own an interesting and diverse digital library." wrappingWidth="243.2" />
+
+                            </children>
+                        </AnchorPane>
+                        <Button fx:id="close" focusTraversable="false" layoutX="614.0" layoutY="0.8" mnemonicParsing="false" onAction="#close" prefHeight="30.0" prefWidth="50.0" styleClass="close" stylesheets="@../css/login.css" AnchorPane.rightAnchor="-8.0" AnchorPane.topAnchor="0.0" />
+                        <FontAwesomeIconView disable="true" glyphName="CLOSE" layoutX="630.0" layoutY="20.0" selectionStart="0" size="1.2em" tabSize="0" text="" textAlignment="CENTER" />
                     </children>
                 </AnchorPane>
             </children>

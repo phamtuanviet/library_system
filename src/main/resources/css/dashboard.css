@@ -5,8 +5,8 @@
 }
 
 .sidebar {
-    -fx-background-color: #FFFFFF;
-    -fx-background-radius: 30px 30px 0px 0px;
+    -fx-background-color: #E7F5DC;
+    -fx-background-radius: 0px 0px 0px 0px;
 }
 
 .sidebar_opt {
@@ -18,12 +18,12 @@
 }
 
 .home_top {
-    -fx-background-color: #FFFFFF;
-    -fx-background-radius: 0px 0px 30px 30px;
+    -fx-background-color: #E7F5DC;
+    -fx-background-radius: 20px 20px 20px 20px;
 }
 
 .home_background {
-    -fx-background-color:  #34495E;
+    -fx-background-color:  #B6C99B;
 }
 
 .content {
@@ -31,44 +31,57 @@
 }
 
 .update_btn {
-    -fx-background-color: linear-gradient(to right, #72dca0, #a0dcd8);
-    -fx-background-radius: 30px;
-    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.5), 10, 0, 0, 5);
-    -fx-font-family: Arial;
+    -fx-background-color:#9ACD32;
+    -fx-background-radius: 3px;
+    -fx-font-family: "Barlow Condensed ExtraBold"; /* Đảm bảo font hỗ trợ in nghiêng */
+    -fx-font-size: 16px;
+    -fx-font-style: italic; /* Làm chữ in nghiêng */
+    -fx-font-weight: bold; /* Làm chữ đậm */
     -fx-text-fill: white;
-    -fx-font-size: 14px;
 }
+.update_btnn {
+    -fx-background-color:#8c4a31;
+    -fx-background-radius: 3px;
+    -fx-font-family: "Barlow Condensed ExtraBold"; /* Đảm bảo font hỗ trợ in nghiêng */
+    -fx-font-size: 16px;
+    -fx-font-style: italic; /* Làm chữ in nghiêng */
+    -fx-font-weight: bold; /* Làm chữ đậm */
+    -fx-text-fill: white;
+}
+
 
 .update_btn:hover {
     -fx-cursor: hand;
-    -fx-background-color: linear-gradient(to right, #60b58a, #8acbcd);
+    -fx-background-color: #6B8E23;
 }
 
 .delete_btn {
-    -fx-background-color: linear-gradient(to right, #cc504e, #b23a37);
-    -fx-background-radius: 30px;
-    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.5), 10, 0, 0, 5);
-    -fx-font-family: Arial;
+    -fx-background-color: #CD5C5C;
+    -fx-background-radius: 3px;
+    -fx-font-family: "Barlow Condensed ExtraBold"; /* Đảm bảo font hỗ trợ in nghiêng */
+    -fx-font-size: 16px;
+    -fx-font-style: italic; /* Làm chữ in nghiêng */
+    -fx-font-weight: bold; /* Làm chữ đậm */
     -fx-text-fill: white;
-    -fx-font-size: 14px;
 }
 
 .delete_btn:hover {
-    -fx-background-color: linear-gradient(to right, #e35a58, #c74440);
+    -fx-background-color:#993333;
     -fx-cursor: hand;
 }
 .qr-button {
-    -fx-background-color: linear-gradient(to bottom, #4FC3F7, #0288D1);
-    -fx-background-radius: 20;
+    -fx-background-color: #79CDCD;
+    -fx-background-radius: 3px;
+    -fx-font-family: "Barlow Condensed ExtraBold"; /* Đảm bảo font hỗ trợ in nghiêng */
+    -fx-font-size: 16px;
+    -fx-font-style: italic; /* Làm chữ in nghiêng */
+    -fx-font-weight: bold; /* Làm chữ đậm */
     -fx-text-fill: white;
-    -fx-font-family: Arial;
-    -fx-font-size: 14px;
-    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.2), 10, 0, 0, 2);
 }
 
 .qr-button:hover {
     -fx-cursor: hand;
-    -fx-background-color: linear-gradient(to bottom, #0288D1, #01579B);
+    -fx-background-color: #528B8B;
     -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.3), 12, 0, 0, 4);
 }
 
@@ -78,13 +91,15 @@
 }
 
 .add_bar {
-    -fx-background-color: #3f4e59;
-    -fx-background-radius: 30px;
+    -fx-background-color: #88976C;
+    -fx-background-radius: 20px;
 }
 .frame_action_image {
     -fx-border-color: #ffffff;
-    -fx-background-radius: 30;
-    -fx-border-radius: 30;
+    -fx-background-color: #E7F5DC;
+    -fx-background-radius: 10;
+    -fx-border-radius: 10;
+
 }
 
 .image_view_action {
@@ -94,14 +109,19 @@
 }
 
 .add_insert_btn {
-    -fx-background-color: linear-gradient(to right, #48a9cc, #f77b55);
-    -fx-background-radius: 0 0 30px 30px;
-    -fx-border-radius: 0 0 30px 30px;
+    -fx-background-color:#8B4C39;
+    -fx-background-radius: 0 0 10px 10px;
+    -fx-border-radius: 0 0 10px 10px;
+    -fx-font-family: "Barlow Condensed ExtraBold"; /* Đảm bảo font hỗ trợ in nghiêng */
+    -fx-font-size: 16px;
+    -fx-font-style: italic; /* Làm chữ in nghiêng */
+    -fx-font-weight: bold; /* Làm chữ đậm */
+    -fx-text-fill: white;
 }
 
 .add_insert_btn:hover {
     -fx-cursor: hand;
-    -fx-background-color: linear-gradient(to right, #5dbbdf, #ff8d66);
+    -fx-background-color: #B6C99B;
 }
 
 .text {
@@ -109,42 +129,47 @@
     -fx-border-radius: 10px;
 }
 .user_add_btn{
-    -fx-background-radius: 50px;
-    -fx-background-color: linear-gradient(to right, #cc504e, #b23a37);;
+    -fx-background-radius: 3px;
+    -fx-background-color:#8c4a31;
 }
 .user_add_btn:hover{
-    -fx-background-color: linear-gradient(to right, #e35a58, #c74440);
+    -fx-background-color:#CD853F;
     -fx-cursor: hand;
 }
 .document_swap_btn {
-    -fx-background-color: linear-gradient(to right, #48a9cc, #f77b55);
-    -fx-background-radius: 30px;
+    -fx-background-color: #8c4a31;
+    -fx-background-radius: 3px;
 }
 .document_swap_btn:hover {
     -fx-cursor: hand;
-    -fx-background-color: linear-gradient(to right, #5dbbdf, #ff8d66);
+    -fx-background-color: #CD853F;
+}
+.update_btnn:hover {
+    -fx-cursor: hand;
+    -fx-background-color: #CD853F;
 }
 .document_swap_btn_ {
-    -fx-background-color: linear-gradient(to right, #72dca0, #a0dcd8);
-    -fx-background-radius: 30px;
-    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.5), 10, 0, 0, 5);
+    -fx-background-color: #8c4a31;
+    -fx-background-radius: 3px;
 }
 
 .document_swap_btn_:hover {
     -fx-cursor: hand;
-    -fx-background-color: linear-gradient(to right, #60b58a, #8acbcd);
+    -fx-background-color:#CD853F;
 }
 .button_dash_board{
-    -fx-background-color: #bdc3c7;
+    -fx-background-color: #728156;
     -fx-border-color: transparent;
 }
 .button_dash_board:hover{
-    -fx-background-color:#BDBDBD ;
     -fx-cursor: hand;
 }
+
 .init_home_btn {
-    -fx-background-color: #4083ac
+    -fx-background-color: #728156
 }
+
+
 .qr_background {
     -fx-background-color: #fff;
     -fx-background-radius: 30px;
@@ -153,20 +178,20 @@
     -fx-cursor: hand;
 }
 .user_card{
-    -fx-background-color: linear-gradient(to right,#a1c4fd,#c2e9fb);
+    -fx-background-color: #8B5A2B;
     -fx-background-radius: 20px;
 }
 .document_card{
-    -fx-background-color:linear-gradient(to right,#d3cce3,#e9e4f0 ) ;
+    -fx-background-color:#8B4513;
     -fx-background-radius: 20px;
 }
 .transaction_card{
-    -fx-background-color: linear-gradient(to right,#d3cce3,#e9e4f0 ) ;
+    -fx-background-color:#8B4C39 ;
     -fx-background-radius: 20px;
 }
 .stack_image_home{
     -fx-background-radius: 20px;
-    -fx-background-color: #ffffff;
+    -fx-background-color: #E7F5DC;
 }
 .scroll-bar {
     -fx-background-color: #2c3e50;
@@ -203,30 +228,75 @@
 }
 .borrow_btn{
     -fx-background-radius: 20px;
-    -fx-background-color: linear-gradient(to right, #a8e063, #56ab2f);
-    -fx-text-fill: #fff;
+    -fx-background-color: linear-gradient(to right, #b76e79, #7e4a4e);
+    -fx-font-family: "Barlow Condensed ExtraBold"; /* Đảm bảo font hỗ trợ in nghiêng */
+    -fx-font-size: 20px;
+    -fx-font-style: italic; /* Làm chữ in nghiêng */
+    -fx-font-weight: bold; /* Làm chữ đậm */
+    -fx-text-fill: white;
 }
 .borrow_btn:hover{
-    -fx-background-color: linear-gradient(to right, #76b852, #8DC26F);
+    -fx-background-color: linear-gradient(to right, #a35b66, #6c3f43);
     -fx-cursor: hand;
+    transition: -fx-background-color 0.3s ease-in-out;
 }
 .return_btn{
     -fx-background-radius: 20px;
-    -fx-background-color: linear-gradient(to right, #36D1DC, #5B86E5);
-    -fx-text-fill: #fff;
+    -fx-background-color: linear-gradient(to right, #8b9a77, #5e6e4a);
+    -fx-font-family: "Barlow Condensed ExtraBold"; /* Đảm bảo font hỗ trợ in nghiêng */
+    -fx-font-size: 20px;
+    -fx-font-style: italic; /* Làm chữ in nghiêng */
+    -fx-font-weight: bold; /* Làm chữ đậm */
+    -fx-text-fill: white;
+}
+.return_btn1{
+    -fx-background-radius: 20px;
+    -fx-background-color: linear-gradient(to right, #b76e79, #7e4a4e);
+    -fx-font-family: "Barlow Condensed ExtraBold"; /* Đảm bảo font hỗ trợ in nghiêng */
+    -fx-font-size: 20px;
+    -fx-font-style: italic; /* Làm chữ in nghiêng */
+    -fx-font-weight: bold; /* Làm chữ đậm */
+    -fx-text-fill: white;
 }
 .return_btn:hover{
-    -fx-background-color: linear-gradient(to right, #6FB1FC, #4364F7);
+    -fx-background-color: linear-gradient(to right, #7a8867, #515c3e);
     -fx-cursor: hand;
+    transition: -fx-background-color 0.3s ease-in-out;
+}
+.return_btn1:hover{
+    -fx-background-color: linear-gradient(to right, #7a8867, #515c3e);
+    -fx-cursor: hand;
+    transition: -fx-background-color 0.3s ease-in-out;
+}
+.querry_btn1:hover{
+    -fx-background-color: linear-gradient(to right, #7a8867, #515c3e);
+    -fx-cursor: hand;
+    transition: -fx-background-color 0.3s ease-in-out;
+
 }
 .querry_btn{
     -fx-background-radius: 20px;
-    -fx-background-color: linear-gradient(to right, #fbc2eb, #a6c1ee);
-    -fx-text-fill: #fff;
+    -fx-background-color: linear-gradient(to right, #7687a0, #4c5a72);
+    -fx-font-family: "Barlow Condensed ExtraBold"; /* Đảm bảo font hỗ trợ in nghiêng */
+    -fx-font-size: 20px;
+    -fx-font-style: italic; /* Làm chữ in nghiêng */
+    -fx-font-weight: bold; /* Làm chữ đậm */
+    -fx-text-fill: white;
+}
+.querry_btn1{
+    -fx-background-radius: 20px;
+    -fx-background-color: linear-gradient(to right, #b76e79, #7e4a4e);
+    -fx-font-family: "Barlow Condensed ExtraBold"; /* Đảm bảo font hỗ trợ in nghiêng */
+    -fx-font-size: 20px;
+    -fx-font-style: italic; /* Làm chữ in nghiêng */
+    -fx-font-weight: bold; /* Làm chữ đậm */
+    -fx-text-fill: white;
 }
 .querry_btn:hover{
-    -fx-background-color: linear-gradient(to right, #f2a9f0, #9c9ee9);
+    -fx-background-color: linear-gradient(to right, #667893, #3e4d63);
     -fx-cursor: hand;
+    transition: -fx-background-color 0.3s ease-in-out;
+
 }
 
 .search{
@@ -238,4 +308,8 @@
     -fx-font-family: Arial;
     -fx-padding: 0px 0px 0px 28px;
     -fx-text-fill: white;
+}
+
+.table1 {
+
 }

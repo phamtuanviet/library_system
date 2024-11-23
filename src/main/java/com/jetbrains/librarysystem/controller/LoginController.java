@@ -57,8 +57,8 @@ public class LoginController extends BaseController implements Initializable {
                     if (adminDao.checkLogin(username.getText(), password.getText())) {
                         Platform.runLater(() -> {
                             try {
-                                Notification.showAlert(Alert.AlertType.INFORMATION
-                                        , "Success", "Successfully logged in");
+//                                Notification.showAlert(Alert.AlertType.INFORMATION
+//                                        , "Success", "Successfully logged in");
                                 loginBtn.getScene().getWindow().hide();
 
                                 Parent root = FXMLLoader.load(getClass().getResource

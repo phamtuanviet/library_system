@@ -48,6 +48,8 @@ import java.net.URL;
 import java.nio.file.Files;
 import java.nio.file.StandardCopyOption;
 import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.time.format.DateTimeParseException;
 import java.util.*;
 
 public class DashBoardController extends BaseController implements Initializable {
@@ -326,10 +328,10 @@ public class DashBoardController extends BaseController implements Initializable
             pane.setVisible(false);
         }
 
-        activeButton.setStyle("-fx-background-color: #4083ac;");
+        activeButton.setStyle("-fx-background-color: #B6C99B;");
 
         for (Button button : otherButtons) {
-            button.setStyle("-fx-background-color: #bdc3c7");
+            button.setStyle("-fx-background-color:#728156");
         }
 
 
@@ -577,7 +579,7 @@ public class DashBoardController extends BaseController implements Initializable
                 , "Are you sure you want to update this user?");
         if (confirmed) {
             if (user_firstName_text.getText().isEmpty() || user_lastName_text.getText().isEmpty()
-                    || user_firstName_text.getText().isEmpty() || user_date_of_birth_text.getValue() == null
+                    || user_date_of_birth_text.getValue() == null
                     || user_gender_text.getValue() == null || user_image_view.getImage() == null) {
                 Notification.showAlert(Alert.AlertType.ERROR, "Error Message"
                         , "Please fill the required fields");
@@ -627,6 +629,7 @@ public class DashBoardController extends BaseController implements Initializable
                 Thread newThread = new Thread(newTask);
                 newThread.setDaemon(true);
                 newThread.start();
+
             }
         }
     }
@@ -784,7 +787,7 @@ public class DashBoardController extends BaseController implements Initializable
             isAvailableDocument = false;
             document_swap.getStyleClass().add("document_swap_btn");
             document_swap.getStyleClass().remove("document_swap_btn_");
-            document_swap.setText("Document Not Available");
+            document_swap.setText("Not Available");
             searchDocumentsApiService();
         } else {
             isAvailableDocument = true;
