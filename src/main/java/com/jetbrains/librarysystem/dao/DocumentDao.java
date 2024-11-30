@@ -45,7 +45,7 @@ public class DocumentDao {
     }
 
 
-    /* Lấy giá trị ban đầu cho document. */
+    /** Lấy giá trị ban đầu cho document. */
     public List<DocumentData> getInitDocuments() {
         List<DocumentData> documents = new ArrayList<DocumentData>();
         try (Connection connection = Database.connectToDb()) {
@@ -171,7 +171,7 @@ public class DocumentDao {
         return null;
     }
 
-    /* Đếm số sách đang có trong database. */
+    /** Đếm số sách đang có trong database. */
     public Integer countTotalDocuments() {
         try (Connection connection = Database.connectToDb()) {
             String sql = "SELECT COUNT(*) FROM document";

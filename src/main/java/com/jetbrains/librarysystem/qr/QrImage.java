@@ -13,7 +13,7 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 
 public class QrImage {
-    /* Tạo qr từ đường link lấy từ dữ liệu document. */
+    /** Tạo qr từ đường link lấy từ dữ liệu document. */
     public static Image generateQRCodeImage(String text) throws WriterException, IOException {
         QRCodeWriter qrCodeWriter = new QRCodeWriter();
         BitMatrix bitMatrix = qrCodeWriter.encode(text, BarcodeFormat.QR_CODE, 400, 400);

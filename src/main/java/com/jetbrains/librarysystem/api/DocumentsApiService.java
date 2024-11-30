@@ -20,7 +20,7 @@ public class DocumentsApiService {
             "=IwY2xjawFwv4dleHRuA2FlbQIxMAABHdyma8Iy9rUWIFaU7ThbBK1KYQr-RdX7uzOu3pdXgXbs3eoJLi48FOr_yA_aem_zetxgmzO6rQ1SqBqlsbY2A";
     private final String Max_result_api = "&maxResults=";
 
-    /* Tìm kiếm Api theo từ khóa */
+    /** Tìm kiếm Api theo từ khóa */
     public List<DocumentData> searchDocuments(String query, Integer maxResult) throws Exception {
         String encodedQuery = URLEncoder.encode(query, StandardCharsets.UTF_8.toString());
         String api_url = Header_api + Querry_api + encodedQuery + Key_api + Max_result_api + maxResult;
@@ -43,7 +43,7 @@ public class DocumentsApiService {
     }
 
 
-    /* Lấy dữ liệu từ Api và chuyền vào Document Object */
+    /** Lấy dữ liệu từ Api và chuyền vào Document Object */
     private List<DocumentData> parseDocuments(HttpURLConnection connection) throws Exception {
         BufferedReader in = new BufferedReader(new InputStreamReader(connection.getInputStream()));
         String inputLine;

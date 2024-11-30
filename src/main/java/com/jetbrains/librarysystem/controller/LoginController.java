@@ -44,7 +44,7 @@ public class LoginController extends BaseController implements Initializable {
         System.exit(0);
     }
 
-    /* Xử lý đang nhập. */
+    /** Xử lý đang nhập. */
     public void loginAdmin() {
         if (username.getText().isEmpty() || password.getText().isEmpty()) {
             Notification.showAlert(Alert.AlertType.ERROR

@@ -48,8 +48,6 @@ import java.net.URL;
 import java.nio.file.Files;
 import java.nio.file.StandardCopyOption;
 import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
-import java.time.format.DateTimeParseException;
 import java.util.*;
 
 public class DashBoardController extends BaseController implements Initializable {
@@ -295,7 +293,9 @@ public class DashBoardController extends BaseController implements Initializable
     private Integer totalDocuments;
     private Integer totalTransactions;
 
-    /* Hiển thị số Object có trong database trên màn hình Home trong DashBoard. */
+    /**
+     * Hiển thị số Object có trong database trên màn hình Home trong DashBoard.
+     */
     private void displayTotal() {
         Task<Void> task = new Task<>() {
             @Override
@@ -321,7 +321,9 @@ public class DashBoardController extends BaseController implements Initializable
             , "src/main/resources/image/home/download (2).jpg", "src/main/resources/image/home/download (3).jpg"
             , "src/main/resources/image/home/download (4).jpg"};
 
-    /* Xử lý sự kiện đổi màn hình DashBoard và thay đổi css nút được chọn. */
+    /**
+     * Xử lý sự kiện đổi màn hình DashBoard và thay đổi css nút được chọn.
+     */
     private void setActivePane(StackPane activePane, Button activeButton, StackPane[] otherPanes, Button[] otherButtons) {
         activePane.setVisible(true);
         for (StackPane pane : otherPanes) {
@@ -337,7 +339,9 @@ public class DashBoardController extends BaseController implements Initializable
 
     }
 
-    /* Kiểm tra xem đang chọn update hay add trong mục user. */
+    /**
+     * Kiểm tra xem đang chọn update hay add trong mục user.
+     */
     private boolean isUpdate = true;
 
     private final DocumentsApiService documentsApiService = new DocumentsApiService();
@@ -346,14 +350,20 @@ public class DashBoardController extends BaseController implements Initializable
         this.isUpdate = isUpdate;
     }
 
-    /* Danh sách trong gender. */
+    /**
+     * Danh sách trong gender.
+     */
     private final String[] genderList = {"Male", "Female"};
 
-    /* List các ảnh để hiện thị trong phần ở DashBoard. */
+    /**
+     * List các ảnh để hiện thị trong phần ở DashBoard.
+     */
     private final Image[] imageList = new Image[pathImageHome.length];
     private int currentIndexImage = 0;
 
-    /* Gắn ảnh mà khung trong phần Home. */
+    /**
+     * Gắn ảnh mà khung trong phần Home.
+     */
     public void createImageHome() {
         for (int i = 0; i < pathImageHome.length; i++) {
             File imageFile = new File(pathImageHome[i]);
@@ -362,7 +372,9 @@ public class DashBoardController extends BaseController implements Initializable
         }
     }
 
-    /* Thay đổi ảnh và hiệu ứng Fade khi chuyển ảnh. */
+    /**
+     * Thay đổi ảnh và hiệu ứng Fade khi chuyển ảnh.
+     */
     private void changeImage() {
         FadeTransition fadeOut = new FadeTransition(Duration.seconds(1), image_home);
         fadeOut.setFromValue(1.0);
@@ -387,7 +399,9 @@ public class DashBoardController extends BaseController implements Initializable
         user_gender_text.setItems(genderList);
     }
 
-    /* Danh sách user để hiện thị trong phần User. */
+    /**
+     * Danh sách user để hiện thị trong phần User.
+     */
     private ObservableList<UserData> list_user_data = FXCollections.observableArrayList();
 
     public void removeUser(UserData userData) {
@@ -396,7 +410,9 @@ public class DashBoardController extends BaseController implements Initializable
 
     private final UserDao userDao = UserDao.getInstance();
 
-    /* Hiển thị phần nội dung trong mục Transaction. */
+    /**
+     * Hiển thị phần nội dung trong mục Transaction.
+     */
     private void setVisableTransaction(AnchorPane anchorPane, AnchorPane[] anchorPanes) {
         anchorPane.setVisible(true);
         for (AnchorPane pane : anchorPanes) {
@@ -404,7 +420,9 @@ public class DashBoardController extends BaseController implements Initializable
         }
     }
 
-    /* Quay lại phần chọn nội dung trong Transaction. */
+    /**
+     * Quay lại phần chọn nội dung trong Transaction.
+     */
     public void backToTransactionOption() {
         transaction_borrow_option.setVisible(false);
         transaction_querry_option.setVisible(false);
@@ -412,7 +430,9 @@ public class DashBoardController extends BaseController implements Initializable
         isReturn = false;
     }
 
-    /* Nghe sự kiện đổi Form trong Transaction. */
+    /**
+     * Nghe sự kiện đổi Form trong Transaction.
+     */
     public void switchFormTransaction(ActionEvent event) {
         Object source = event.getSource();
         if (source == transaction_borrow_btn_option) {
@@ -435,7 +455,9 @@ public class DashBoardController extends BaseController implements Initializable
     }
 
 
-    /* Đổi Form nội dung của DashBoard. */
+    /**
+     * Đổi Form nội dung của DashBoard.
+     */
     public void switchForm(ActionEvent event) {
         Object source = event.getSource();
         if (source == home_btn) {
@@ -459,7 +481,9 @@ public class DashBoardController extends BaseController implements Initializable
         }
     }
 
-    /* Mở màn hình sự kiện add hoặc update của user. */
+    /**
+     * Mở màn hình sự kiện add hoặc update của user.
+     */
     public void showUserActionFrame() {
         user_scrollPane.setEffect(new BoxBlur(5, 5, 3));
         user_action_frame.setVisible(true);
@@ -470,7 +494,9 @@ public class DashBoardController extends BaseController implements Initializable
         }
     }
 
-    /* Lấy dự liệu user đang chọn và cho vào khung sự kiện. */
+    /**
+     * Lấy dự liệu user đang chọn và cho vào khung sự kiện.
+     */
     public void setSelectedUser(UserData userData) {
         user_id_text.setText(String.valueOf(userData.getId()));
         user_lastName_text.setText(String.valueOf(userData.getLastName()));
@@ -488,7 +514,9 @@ public class DashBoardController extends BaseController implements Initializable
         }
     }
 
-    /* Sử lý chèn ảnh vào và tao bản sao ảnh đến phần resource để xử lý trong database. */
+    /**
+     * Sử lý chèn ảnh vào và tao bản sao ảnh đến phần resource để xử lý trong database.
+     */
     public void insertImageBtn() {
         FileChooser fileChooser = new FileChooser();
         fileChooser.getExtensionFilters().add(new FileChooser.ExtensionFilter("Image Files"
@@ -522,7 +550,9 @@ public class DashBoardController extends BaseController implements Initializable
         }
     }
 
-    /* Thực hiện hành động cập nhập trong database. */
+    /**
+     * Thực hiện hành động cập nhập trong database.
+     */
     public void actionUser() {
         if (isUpdate) {
             updateUser();
@@ -533,7 +563,9 @@ public class DashBoardController extends BaseController implements Initializable
         }
     }
 
-    /* Tìm User theo giá trị trong ô tìm kiếm (Áp dụng cả mục User và Transaction(borrow)). */
+    /**
+     * Tìm User theo giá trị trong ô tìm kiếm (Áp dụng cả mục User và Transaction(borrow)).
+     */
     public void searchUsersByValue(String newValue, ObservableList<UserData> listUsers) {
         try {
             Task<Void> task = new Task<Void>() {
@@ -556,14 +588,18 @@ public class DashBoardController extends BaseController implements Initializable
         }
     }
 
-    /* Mở khung điền Add user. */
+    /**
+     * Mở khung điền Add user.
+     */
     public void userAddBtnAction() {
         isUpdate = false;
         clearFormUser();
         showUserActionFrame();
     }
 
-    /* Xóa dữ liệu trong khung điền thông tin. */
+    /**
+     * Xóa dữ liệu trong khung điền thông tin.
+     */
     private void clearFormUser() {
         user_id_text.clear();
         user_lastName_text.clear();
@@ -572,6 +608,13 @@ public class DashBoardController extends BaseController implements Initializable
         user_date_of_birth_text.setValue(null);
 
         user_image_view.setImage(null);
+    }
+
+    /**
+     * Kiểm tra có phải kiểu chữ không.
+     */
+    private boolean isAlpha(String name) {
+        return name.matches("[a-zA-Z]+");
     }
 
     private void updateUser() {
@@ -583,6 +626,9 @@ public class DashBoardController extends BaseController implements Initializable
                     || user_gender_text.getValue() == null || user_image_view.getImage() == null) {
                 Notification.showAlert(Alert.AlertType.ERROR, "Error Message"
                         , "Please fill the required fields");
+            } else if (!isAlpha(user_firstName_text.getText()) || !isAlpha(user_lastName_text.getText())) {
+                Notification.showAlert(Alert.AlertType.ERROR, "Error Message"
+                        , "Name must be alphanumeric and underscore");
             } else {
                 Task<Void> newTask = new Task<Void>() {
                     @Override
@@ -642,6 +688,9 @@ public class DashBoardController extends BaseController implements Initializable
                     || user_firstName_text.getText().isEmpty() || user_date_of_birth_text.getValue() == null
                     || user_gender_text.getValue() == null || user_image_view.getImage() == null) {
                 Notification.showAlert(Alert.AlertType.ERROR, "Error Message", "Please fill the required fields");
+            } else if (!isAlpha(user_firstName_text.getText()) || !isAlpha(user_lastName_text.getText())) {
+                Notification.showAlert(Alert.AlertType.ERROR, "Error Message"
+                        , "Name must be alphanumeric and underscore");
             } else {
                 Task<Void> newTask = new Task<Void>() {
                     @Override
@@ -688,7 +737,9 @@ public class DashBoardController extends BaseController implements Initializable
         }
     }
 
-    /* Lấy dữ liệu user được chọn từ bảng trong mục transaction(borrow). */
+    /**
+     * Lấy dữ liệu user được chọn từ bảng trong mục transaction(borrow).
+     */
     public void selectUserTransaction() {
         UserData userData = transaction_user_table.getSelectionModel().getSelectedItem();
         int num = transaction_user_table.getSelectionModel().getSelectedIndex();
@@ -699,7 +750,9 @@ public class DashBoardController extends BaseController implements Initializable
         transaction_userId_select_borrow.setText(String.valueOf(userData.getId()));
     }
 
-    /* Lấy dữ liệu document được chọn từ bảng trong mục transaction(borrow). */
+    /**
+     * Lấy dữ liệu document được chọn từ bảng trong mục transaction(borrow).
+     */
     public void selectDocumentTransaction() {
         DocumentData documentData = transaction_document_table.getSelectionModel().getSelectedItem();
         int num = transaction_document_table.getSelectionModel().getSelectedIndex();
@@ -710,16 +763,22 @@ public class DashBoardController extends BaseController implements Initializable
         transaction_documentId_select_borrow.setText(String.valueOf(documentData.getId()));
     }
 
-    /* Đóng form điền thông tin của user. */
+    /**
+     * Đóng form điền thông tin của user.
+     */
     public void closUserActionFrame() {
         user_scrollPane.setEffect(null);
         user_action_frame.setVisible(false);
     }
 
-    /* Kiểm tra xem đang ở mục có sẵn hay không có sẵn trong database. */
+    /**
+     * Kiểm tra xem đang ở mục có sẵn hay không có sẵn trong database.
+     */
     private boolean isAvailableDocument = true;
 
-    /* Danh sách document trong mục Document. */
+    /**
+     * Danh sách document trong mục Document.
+     */
     private ObservableList<DocumentData> list_document_data = FXCollections.observableArrayList();
 
     public void removeDocument(DocumentData documentData) {
@@ -728,7 +787,9 @@ public class DashBoardController extends BaseController implements Initializable
 
     private final DocumentDao documentDao = DocumentDao.getInstance();
 
-    /* Tìm document theo giá trị ô search cả phần transaction và document. */
+    /**
+     * Tìm document theo giá trị ô search cả phần transaction và document.
+     */
     private void searchDocumentsListDb(String newValue, ObservableList<DocumentData> list) {
         try {
             Task<Void> task = new Task<Void>() {
@@ -751,7 +812,9 @@ public class DashBoardController extends BaseController implements Initializable
         }
     }
 
-    /* Tìm kiếm document từ api. */
+    /**
+     * Tìm kiếm document từ api.
+     */
     private void searchDocumentsApiService() {
         try {
             if (search_document.getText().equals("") || search_document.getText() == null) {
@@ -781,7 +844,9 @@ public class DashBoardController extends BaseController implements Initializable
         }
     }
 
-    /* Thay đổi sang dạng có sẵn hoặc không và đổi css của button. */
+    /**
+     * Thay đổi sang dạng có sẵn hoặc không và đổi css của button.
+     */
     public void setIsAvailable() {
         if (isAvailableDocument) {
             isAvailableDocument = false;
@@ -802,7 +867,9 @@ public class DashBoardController extends BaseController implements Initializable
         return isAvailableDocument;
     }
 
-    /* Show qr đến link description của document. */
+    /**
+     * Show qr đến link description của document.
+     */
     public void showQrFrame(String linkDescription) throws IOException, WriterException {
         document_scrollPane.setEffect(new BoxBlur(5, 5, 3));
         document_qr_frame.setVisible(true);
@@ -810,7 +877,9 @@ public class DashBoardController extends BaseController implements Initializable
         document_qr_image_view.setImage(qrImage);
     }
 
-    /* Hiển thị khung sự kiện của phần document. */
+    /**
+     * Hiển thị khung sự kiện của phần document.
+     */
     public void showDocumentActionFrame() {
         document_scrollPane.setEffect(new BoxBlur(5, 5, 3));
         document_action_frame.setVisible(true);
@@ -821,7 +890,9 @@ public class DashBoardController extends BaseController implements Initializable
         }
     }
 
-    /* Lấy dữ liệu document đang được chọn để điền vào form sự kiện. */
+    /**
+     * Lấy dữ liệu document đang được chọn để điền vào form sự kiện.
+     */
     public void setSelectedDocument(DocumentData documentData) {
         document_id_text.setText(String.valueOf(documentData.getId()));
         document_titile_text.setText(String.valueOf(documentData.getTitle()));
@@ -846,7 +917,9 @@ public class DashBoardController extends BaseController implements Initializable
         }
     }
 
-    /* Đóng form sự kiện của document. */
+    /**
+     * Đóng form sự kiện của document.
+     */
     public void closeDocumentActionFrame() {
         document_scrollPane.setEffect(null);
         document_action_frame.setVisible(false);
@@ -857,19 +930,25 @@ public class DashBoardController extends BaseController implements Initializable
         document_qr_frame.setVisible(false);
     }
 
-    /* Sử lý lại phần đóng sự kiện vì phát sinh do đa luồng
-    (khi update và add document thì nó đóng trược khi được lấy dữ liệu truyền vào database. */
+    /**
+     * Sử lý lại phần đóng sự kiện vì phát sinh do đa luồng
+     * (khi update và add document thì nó đóng trược khi được lấy dữ liệu truyền vào database.
+     */
     public void closeDocumentFrame() {
         closeDocumentActionFrame();
         document_quantity_text.clear();
     }
 
-    /* Chech xem mục điền số lượng có hợp lệ không. */
+    /**
+     * Chech xem mục điền số lượng có hợp lệ không.
+     */
     private boolean checkquantityValid(String str) {
         return str.matches("\\d+") && !str.matches("0+");
     }
 
-    /* Thực hiện hành động (add hoặc update) của document. */
+    /**
+     * Thực hiện hành động (add hoặc update) của document.
+     */
     public void actionDocument() {
         if (isAvailableDocument) {
             updateDocument();
@@ -1003,16 +1082,24 @@ public class DashBoardController extends BaseController implements Initializable
         }
     }
 
-    /* Danh sách user để hiện thị trong bảng phần transaction(borrow). */
+    /**
+     * Danh sách user để hiện thị trong bảng phần transaction(borrow).
+     */
     private ObservableList<DocumentData> list_document_transaction = FXCollections.observableArrayList();
 
-    /* Danh sách user để hiện thị trong bảng phần transaction(borrow). */
+    /**
+     * Danh sách user để hiện thị trong bảng phần transaction(borrow).
+     */
     private ObservableList<UserData> list_user_transaction = FXCollections.observableArrayList();
 
-    /* Lấy giá trị của ô seach document và xử lý một ngoại lệ (khi ô search bỏ trống). */
+    /**
+     * Lấy giá trị của ô seach document và xử lý một ngoại lệ (khi ô search bỏ trống).
+     */
     private final StringBuilder defaultStringApi = new StringBuilder();
 
-    /* Pause lại khi ô seach document thay đổi quá nhanh(để tránh gọi api quá nhiều). */
+    /**
+     * Pause lại khi ô seach document thay đổi quá nhanh(để tránh gọi api quá nhiều).
+     */
     PauseTransition pause = new PauseTransition(Duration.seconds(0.5));
 
     private TransactionDao transactionDao = TransactionDao.getInstance();
@@ -1034,8 +1121,10 @@ public class DashBoardController extends BaseController implements Initializable
         });
     }
 
-    /* Kiểm tra xem có phải mục return trong phần transaction hay không
-    để xem lấy mục transaction từ querry hay return. */
+    /**
+     * Kiểm tra xem có phải mục return trong phần transaction hay không
+     * để xem lấy mục transaction từ querry hay return.
+     */
     private boolean isReturn;
 
     private void initTableDocument() {
@@ -1094,7 +1183,9 @@ public class DashBoardController extends BaseController implements Initializable
         transaction_table_querry.setItems(transactionDisplays);
     }
 
-    /* Số lượng của document hiện tại để check khi borrow. */
+    /**
+     * Số lượng của document hiện tại để check khi borrow.
+     */
     private Integer quantityDocumentCurent;
 
     private LocalDate borrowDate;
@@ -1168,10 +1259,14 @@ public class DashBoardController extends BaseController implements Initializable
 
     private TransactionDisplayDao transactionDisplayDao = TransactionDisplayDao.getInstance();
 
-    /* Danh sách transaction hiển thị cả trong phần querry và return. */
+    /**
+     * Danh sách transaction hiển thị cả trong phần querry và return.
+     */
     private ObservableList<TransactionDisplay> transactionDisplays = FXCollections.observableArrayList();
 
-    /* Tìm kiếm transaction theo giá trị của ô seach. */
+    /**
+     * Tìm kiếm transaction theo giá trị của ô seach.
+     */
     public void searchTransactionByValue(String newValue, boolean isReturn) {
         try {
             Task<Void> task = new Task<Void>() {
@@ -1200,7 +1295,9 @@ public class DashBoardController extends BaseController implements Initializable
         }
     }
 
-    /* Lấy dữ liệu của transaction để tra sách. */
+    /**
+     * Lấy dữ liệu của transaction để tra sách.
+     */
     public void selectTransactionToReturn() {
         TransactionDisplay transactionDisplay = transaction_table_return.getSelectionModel().getSelectedItem();
         int num = transaction_table_return.getSelectionModel().getSelectedIndex();
@@ -1250,7 +1347,9 @@ public class DashBoardController extends BaseController implements Initializable
         }
     }
 
-    /* Đăng xuất tài khoản. */
+    /**
+     * Đăng xuất tài khoản.
+     */
     public void logout() {
         try {
             boolean confirmed = Notification.confirmationDialog("Confirmation Message"
