@@ -6,7 +6,7 @@
 ## Các Tính Năng Chính
 
 ### 1. Trang Đăng Nhập (Login Page)
-![Trang Đăng Nhập](/path/to/login-screenshot.png)
+![Trang Đăng Nhập](https://github.com/DoanTuyen23/photo/blob/main/50e164c1-5de8-41d7-8a10-278f74281aa4.jpg)
 
 **Mô Tả:** 
 - Giao diện đăng nhập an toàn và thân thiện
@@ -19,7 +19,7 @@
 - Kiểm tra quyền truy cập
 
 ### 2. Trang Chính (Home Pane)
-![Trang Chính](/path/to/home-screenshot.png)
+![Trang Chính](https://github.com/DoanTuyen23/photo/blob/main/4c37a978-de63-49a2-b146-374787a7f7ac.jpg)
 
 **Mô Tả:** 
 - Tổng quan nhanh về tình trạng thư viện
@@ -32,7 +32,7 @@
 - Số lượng mượn trả
 
 ### 3. Quản Lý Người Dùng (User Management Pane)
-![Quản Lý Người Dùng](/path/to/user-management-screenshot.png)
+![Quản Lý Người Dùng](https://github.com/DoanTuyen23/photo/blob/main/f6db3461-d214-4336-a4ef-7e8618a9a145.jpg)
 
 **Mô Tả:**
 - Quản lý toàn diện thông tin độc giả và nhân viên
@@ -44,7 +44,7 @@
 - Tìm kiếm và lọc người dùng
 
 ### 4. Quản Lý Tài Liệu (Document Management Pane)
-![Quản Lý Tài Liệu](/path/to/document-management-screenshot.png)
+![Quản Lý Tài Liệu](https://github.com/DoanTuyen23/photo/blob/main/0d789958-2375-4d5d-8cac-3a5d94131a03.jpg)
 
 **Mô Tả:**
 - Quản lý kho sách và tài liệu một cách chi tiết
@@ -57,7 +57,7 @@
 - Quản lý kho sách
 
 ### 5. Quản Lý Mượn Trả (Borrowing Management Pane)
-![Quản Lý Mượn Trả](/path/to/borrowing-management-screenshot.png)
+![Quản Lý Mượn Trả](https://github.com/DoanTuyen23/photo/blob/main/0bfd1772-0f3a-406f-978f-97324f88c1d3.jpg)
 
 **Mô Tả:**
 - Theo dõi và quản lý chi tiết quy trình mượn và trả sách
