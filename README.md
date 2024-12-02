@@ -94,3 +94,6 @@ npm run dev
 
 ## Giấy Phép
 MIT License
+
+#Lời cảm ơn :
+Dưới đây là sản phẩm của nhóm em, cảm ơn các thầy đã chú ý theo dõi và lắng nghe, cảm ơn đã truyền thụ cho chúng em những kiến thức bổ ích để ngày càng phát triển và hoàn thiện bản thân hơn
