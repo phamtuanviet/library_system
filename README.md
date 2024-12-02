@@ -67,33 +67,10 @@
 - Kiểm tra tình trạng sách
 - Báo cáo chi tiết về hoạt động mượn trả
 
-## Công Nghệ Sử Dụng
-- Frontend: React
-- Backend: Node.js
-- Cơ Sở Dữ Liệu: MongoDB
-- Xác Thực: JWT
-- Giao Diện: Tailwind CSS
-
-## Cài Đặt
-
-### Yêu Cầu
-- Node.js v18+
-- MongoDB v5+
-
-### Bước Cài Đặt
-```bash
-# Cài đặt dependencies
-npm install
-
-# Khởi chạy môi trường phát triển
-npm run dev
-```
-
 ## Tác Giả
-[VTV]
-
-## Giấy Phép
-MIT License
+- 23020172 Phạm Tuấn Việt (Trưởng nhóm)
+- 23020169 Lê Hoàng Việt (Thành viên)
+- 23020151 Đoàn Văn Tuyền (Thành viên)
 
 ## Lời cảm ơn :
 Dưới đây là sản phẩm của nhóm em, cảm ơn các thầy đã chú ý theo dõi và lắng nghe cũng như đã truyền thụ cho chúng em những kiến thức bổ ích để ngày càng phát triển và hoàn thiện bản thân hơn
