@@ -35,8 +35,7 @@
 ![Quản Lý Người Dùng](https://github.com/DoanTuyen23/photo/blob/main/f6db3461-d214-4336-a4ef-7e8618a9a145.jpg)
 
 **Mô Tả:**
-- Quản lý toàn diện thông tin độc giả và nhân viên
-
+- Quản lý toàn diện thông tin độc giả
 **Chức Năng:**
 - Thêm mới người dùng
 - Chỉnh sửa thông tin cá nhân
