@@ -66,6 +66,10 @@
 - Ghi nhận phiếu mượn sách
 - Kiểm tra tình trạng sách
 - Báo cáo chi tiết về hoạt động mượn trả
+- Qr liên kết tới trang description của sách
+- Thêm sửa xóa người dùng
+- Thêm sửa xóa sách
+- Tìm kiếm sách dựa vào Google Book API
 
 ## Tác Giả
 - 23020172 Phạm Tuấn Việt (Trưởng nhóm)
